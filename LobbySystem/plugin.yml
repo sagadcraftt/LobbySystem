@@ -1,8 +1,8 @@
 name: LobbyItems
 version: 1.0
-api: 3.0.0-ALPHA11
-main: VL\LobbyItems
-author: VL
+api: [3.0.0-ALPHA11]
+main: R\LobbyItems
+author: TR
 commands:
     build:
         description: Lobby Buildmode
