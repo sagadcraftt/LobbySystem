@@ -100,7 +100,7 @@ class LobbyItems extends PluginBase implements Listener
 		@mkdir($this->getDataFolder());
 		$config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 
-		$config->set("OpenChest1", false);
+		$config->set("OpenChest1", false;
 		$config->set("OpenChest2", false);
 		$config->save();
 
