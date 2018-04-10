@@ -1,8 +1,8 @@
 name: LobbyItems
-version: 1.0
-api: 3.0.0-ALPHA11
-main: VL\LobbyItems
-author: VL
+version: 1.0.2
+api: [3.0.0-ALPHA11]
+main: VTR\obbyItems
+author: TeronixPE
 commands:
     build:
         description: Lobby Buildmode
