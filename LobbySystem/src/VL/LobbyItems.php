@@ -220,16 +220,16 @@ class LobbyItems extends PluginBase implements Listener
 		$exit = Item::get(351, 1, 1);
 		$exit->setCustomName(TextFormat::RESET . TextFormat::RED . "Exit");
 
-		$Skyblock = Item::get(2, 1, 1);
+		$Skyblock = Item::get(2, 0, 1);
 		$Skyblock->setCustomName(TextFormat::RESET . TextFormat::GOLD . "SkyBlock");
 
-		$Faction = Item::get(322, 1, 1);
+		$Faction = Item::get(322, 0, 1);
 		$Faction->setCustomName(TextFormat::RESET . TextFormat::GOLD . "KnockbackFFA");
 
-		$Citybuild = Item::get(138, 1, 1);
+		$Citybuild = Item::get(138, 0, 1);
 		$Citybuild->setCustomName(TextFormat::RESET . TextFormat::GOLD . "CityBuild");
 
-		$sur = Item::get(103, 1, 1);
+		$sur = Item::get(103, 0, 1);
 		$sur->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Oneline");
 
 		$inv->setItem(8, $exit);
@@ -245,13 +245,13 @@ class LobbyItems extends PluginBase implements Listener
 		$inv = $player->getInventory();
 		$inv->clearAll();
 
-		$lobby1 = Item::get(42, 0, 1);
+		$lobby1 = Item::get(42, 1, 1);
 		$lobby1->setCustomName(TextFormat::GRAY . "KnockbackFFA" . TextFormat::BOLD . TextFormat::GOLD . "1");
 
-		$lobby2 = Item::get(42, 0, 1);
+		$lobby2 = Item::get(42, 1, 1);
 		$lobby2->setCustomName(TextFormat::GRAY . "soon " . TextFormat::BOLD . TextFormat::GOLD . "2");
 
-		$prelobby = Item::get(41, 0, 1);
+		$prelobby = Item::get(41, 1, 1);
 		$prelobby->setCustomName(TextFormat::GOLD . "CityBuild Lobby");
 
 		$exit = Item::get(351, 1, 1);
@@ -407,7 +407,7 @@ class LobbyItems extends PluginBase implements Listener
 		$item1->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Teleporter");
 
 		$item2 = Item::get(130, 0, 1);
-		$item2->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Cosmetics");
+		$item2->setCustomName(TextFormat::RESET . TextFormat::BLUE . "Cosmetics");
 
 		$item3 = Item::get(264, 0, 1);
 		$item3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Rang Info");
@@ -467,7 +467,7 @@ class LobbyItems extends PluginBase implements Listener
 		$name = $player->getName();
 		$this->getItems($player);
 
-		$event->setJoinMessage("");
+		$event->setJoinMessage("Willkommen auf TeronixPE!");
 		$event->getPlayer()->setFood("20");
 		$player->setGamemode(2);
 
@@ -628,7 +628,7 @@ class LobbyItems extends PluginBase implements Listener
 					} else {
 						if ($sender->getAllowFlight()) {
 							$sender->setAllowFlight(false);
-							$sender->sendMessage($this->prefix . TextFormat::RED . "Du kannst jetzt micht mehr fliegen.");
+							$sender->sendMessage($this->prefix . TextFormat::RED . "Du kannst jetzt nicht mehr fliegen.");
 							return true;
 						}
 					}
@@ -1390,7 +1390,7 @@ class TypeType extends PluginTask {
 					
 				}
 				
-				$config->set("OpenChest1", false);
+				$config->set("OpenChest1", true);
 				$config->save();
 				
 			}
@@ -1434,7 +1434,7 @@ class TypeType extends PluginTask {
 					
 				}
 				
-				$config->set("OpenChest2", false);
+				$config->set("OpenChest2", true);
 				$config->save();
 				
 			}
