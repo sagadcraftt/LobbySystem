@@ -1,6 +1,6 @@
 <?php
 
-namespace VL;
+namespace VL\LobbyItems;
 
 use pocketmine\event\inventory\InventoryOpenEvent;
 use pocketmine\event\inventory\InventoryTransactionEvent;
