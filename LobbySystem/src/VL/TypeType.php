@@ -124,7 +124,7 @@ class TypeType extends PluginTask {
 			
 		}
 		
-		
+           }
 	}
 	
 }
