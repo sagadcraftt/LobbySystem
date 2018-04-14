@@ -196,7 +196,7 @@ class LobbyItems extends PluginBase implements Listener
 		$fire->setCustomName(TextFormat::RESET . TextFormat::RED . "Feuer " . TextFormat::GOLD . "Partikel");
 
 		$site2 = Item::get(281, 0, 1);
-		$site2->setCustomName(TextFormat::RESET . TextFormat::GRAY . "Partikel Seite 2 | " . TextFormat::RED . "BALD");
+		$site2->setCustomName(TextFormat::RESET . TextFormat::GRAY . "Partikel Seite 2 | " . TextFormat::RED . "Coming Soon");
 
 		$exit = Item::get(351, 1, 1);
 		$exit->setCustomName(TextFormat::RESET . TextFormat::RED . "Exit");
@@ -249,7 +249,7 @@ class LobbyItems extends PluginBase implements Listener
 		$lobby1->setCustomName(TextFormat::GRAY . "KnockbackFFA" . TextFormat::BOLD . TextFormat::GOLD . "1");
 
 		$lobby2 = Item::get(42, 0, 1);
-		$lobby2->setCustomName(TextFormat::GRAY . "soon " . TextFormat::BOLD . TextFormat::GOLD . "2");
+		$lobby2->setCustomName(TextFormat::GRAY . "Skyblock" . TextFormat::BOLD . TextFormat::GOLD . "2");
 
 		$prelobby = Item::get(41, 0, 1);
 		$prelobby->setCustomName(TextFormat::GOLD . "CityBuild Lobby");
@@ -259,7 +259,7 @@ class LobbyItems extends PluginBase implements Listener
 
 		$inv->setItem(0, $CityBuild);
 		$inv->setItem(1, $Skyblock);
-		$inv->setItem(7, $PremiumLobby);
+		$inv->setItem(7, $KnockbackFFA);
 
 		$inv->setItem(8, $exit);
 
@@ -277,7 +277,7 @@ class LobbyItems extends PluginBase implements Listener
 		$item2->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Normal");
 
 		$item3 = Item::get(131, 0, 1);
-		$item3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Groß");
+		$item3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Gross");
 
 		$exit = Item::get(351, 1, 1);
 		$exit->setCustomName(TextFormat::RESET . TextFormat::RED . "Exit");
@@ -353,7 +353,7 @@ class LobbyItems extends PluginBase implements Listener
 		$item2->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Partikel");
 
 		$item3 = Item::get(131, 0, 1);
-		$item3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Groeßen");
+		$item3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Groessen");
 
 		$item4 = Item::get(288, 0, 1);
 		$item4->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Fly");
@@ -602,18 +602,18 @@ class LobbyItems extends PluginBase implements Listener
 			$event->getPlayer()->transfer("54.37.166.50", "90");
 		}
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "CityBuild") {
-			$event->getPlayer()->transfer("54.37.166.50", "44");
+			$event->getPlayer()->transfer("UnexMC.net, "7355");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Rang Info") {
 
 			//$this->getRangMenu($player);
-			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Soon");
+			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bald");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Nick") {
 			var_dump("geht");
-			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Soon");
+			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bald");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Fly") {
@@ -646,7 +646,7 @@ class LobbyItems extends PluginBase implements Listener
             $this->getServer()->dispatchCommand($event->getPlayer(), "transferserver");
 			}
 		
-		if ($in == TextFormat::GOLD . "Siyblock Lobby") {
+		if ($in == TextFormat::GOLD . "Syblock Lobby") {
 			if($event->getPlayer()->hasPermission("lobby.premium")) {
 				
 				$this->getServer()->dispatchCommand($event->getPlayer(), "transferserver");
