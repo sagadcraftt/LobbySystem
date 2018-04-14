@@ -1324,4 +1324,3 @@ class LobbyItems extends PluginBase implements Listener
 		}
 	
 }
-}
