@@ -602,7 +602,7 @@ class LobbyItems extends PluginBase implements Listener
 			$event->getPlayer()->transfer("54.37.166.50", "90");
 		}
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "CityBuild") {
-			$event->getPlayer()->transfer("UnexMC.net, "7355");
+			$event->getPlayer()->transfer("UnexMC.net","7355");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Rang Info") {
