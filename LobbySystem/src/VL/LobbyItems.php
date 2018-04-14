@@ -1,6 +1,8 @@
 <?php
 
 namespace VL;
+use VL\TypeType;
+use VL\ItemsLoad;
 
 use pocketmine\event\inventory\InventoryOpenEvent;
 use pocketmine\event\inventory\InventoryTransactionEvent;
