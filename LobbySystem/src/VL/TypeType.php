@@ -5,7 +5,7 @@ use VL\ItemsLoad;
 
 use pocketmine\scheduler\PluginTask;
 use pocketmine\plugin\Plugin;
-use pocketmine\plugin\PluginTask;
+use pocketmine\plugin\PluginBase;
 use pocketmine\entity\Effect;
 use pocketmine\entity\Entity;
 use pocketmine\utils\Config;
@@ -124,7 +124,6 @@ class TypeType extends PluginTask {
 			
 		}
 		
-           }
 	}
 	
 }
