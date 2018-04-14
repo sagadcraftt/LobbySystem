@@ -14,6 +14,12 @@ use pocketmine\item\Item;
 use pocketmine\entity\Item as ItemEntity;
 use pocketmine\math\Vector3;
 use pocketmine\math\Vector2;
+use pocketmine\level\Location;
+use pocketmine\level\particle\BubbleParticle;
+use pocketmine\level\particle\ExplodeParticle;
+use pocketmine\level\particle\HeartParticle;
+use pocketmine\level\particle\HugeExplodeParticle;
+use pocketmine\level\Position;
 use pocketmine\level\particle\DustParticle;
 use pocketmine\level\particle\FlameParticle;
 use pocketmine\level\particle\RedstoneParticle;
@@ -24,11 +30,11 @@ use pocketmine\level\sound\GhastSound;
 
 class ItemsLoad extends PluginTask {
 	
-	public function __construct($plugin) {
+	public function __construct(LobbyItems $plugin) {
         $this->plugin = $plugin;
         parent::__construct($plugin);
     }
-    public function onRun($tick) {
+    public function onRun($currentTick) {
 		
 		foreach($this->plugin->getServer()->getOnlinePlayers() as $player) {
 			$name = $player->getName();
