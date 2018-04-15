@@ -4,6 +4,7 @@ namespace VL;
 use VL\TypeType;
 use VL\ItemsLoad;
 
+use pocketmine\plugin\PluginBase;
 use pocketmine\event\inventory\InventoryOpenEvent;
 use pocketmine\event\inventory\InventoryTransactionEvent;
 use pocketmine\event\player\PlayerExhaustEvent;
