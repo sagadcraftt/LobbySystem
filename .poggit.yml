@@ -3,5 +3,5 @@ branches:
 - master
 projects:
   LobbyItems:
-    path: LobbySystem/LobbyItems
+    path: LobbySystem/
 ...
