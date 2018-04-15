@@ -2,6 +2,6 @@
 branches:
 - LobbyItems
 projects:
-  LobbyItems:
+  LobbySystem:
     path: LobbySystem/
 ...
