@@ -233,6 +233,7 @@ class LobbyItems extends PluginBase implements Listener
 		$inv->setItem(2, $CityBuildV2);
 		$inv->setItem(4, $KnockFFA);
 		$inv->setItem(6, $MiniGames);
+		$inv->setItem(7, $LobbyGames);
 
 	}
 
