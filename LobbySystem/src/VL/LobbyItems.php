@@ -242,7 +242,7 @@ class LobbyItems extends PluginBase implements Listener
 		$inv->setItem(1, $GunGame);
 		$inv->setItem(4, $KnockFFA);
 		$inv->setItem(6, $MLGRush);
-		$inv->setItem(7, $PushWars);
+		$inv->setItem(7, $BedWars);
 		$inv->setItem(2, $StickFight);
 		$inv->setItem(5, $FFA);
 		$inv->setItem(3, $SkyBlock);
