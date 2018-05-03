@@ -402,8 +402,8 @@ class LobbyItems extends PluginBase implements Listener
 		$item2 = Item::get(54, 0, 1);
 		$item2->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Cosmetics");
 
-		$item3 = Item::get(397:3, 0, 1);
-		$item3->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Friends");
+		$item3 = Item::get(446, 0, 1);
+		$item3->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Clans");
 
 		if (!in_array($name, $this->showall) && !in_array($name, $this->showvips) && !in_array($name, $this->shownone)) {
 
@@ -606,7 +606,7 @@ class LobbyItems extends PluginBase implements Listener
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Nick") {
 			var_dump("geht");
-			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bitte benutze /nick on");
+			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bitte benutze /clan help");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Fly") {
