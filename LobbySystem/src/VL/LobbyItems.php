@@ -50,7 +50,7 @@ use pocketmine\event\player\PlayerCommandPreprocessEvent;
 class LobbyItems extends PluginBase implements Listener
 {
 
-	public $prefix = TextFormat::YELLOW . "TeronixPE" . TextFormat::GRAY . " | " . TextFormat::WHITE;
+	public $prefix = TextFormat::BLUE . "VaronPE" . TextFormat::GRAY . " | " . TextFormat::WHITE;
 	public $heart = array("Hearth111");
 	public $jump = array("Jump222");
 	public $speed = array("Speed333");
@@ -86,7 +86,7 @@ class LobbyItems extends PluginBase implements Listener
 
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new TypeType($this), 20);
 
-		$this->getServer()->getNetwork()->setName(TextFormat::BOLD . TextFormat::GREEN . "TeronixPE");
+		$this->getServer()->getNetwork()->setName(TextFormat::BOLD . TextFormat::GREEN . "VaronPE");
 
 		$this->getServer()->getDefaultLevel()->setTime(1000);
 		$this->getServer()->getDefaultLevel()->stopTime();
@@ -213,23 +213,23 @@ class LobbyItems extends PluginBase implements Listener
 		$exit = Item::get(351, 1, 1);
 		$exit->setCustomName(TextFormat::RESET . TextFormat::RED . "Exit");
 
-		$Skyblock = Item::get(2, 1, 1);
-		$Skyblock->setCustomName(TextFormat::RESET . TextFormat::GOLD . "SkyBlock");
+		$CityBuildV2 = Item::get(138, 1, 1);
+		$CityBuildV2->setCustomName(TextFormat::RESET . TextFormat::GOLD . "CityBuildV2");
 
-		$Faction = Item::get(322, 1, 1);
-		$Faction->setCustomName(TextFormat::RESET . TextFormat::GOLD . "KnockbackFFA");
+		$KnockFFA = Item::get(322, 1, 1);
+		$KnockFFA->setCustomName(TextFormat::RESET . TextFormat::GOLD . "KnockFFA");
 
 		$Citybuild = Item::get(138, 1, 1);
-		$Citybuild->setCustomName(TextFormat::RESET . TextFormat::GOLD . "CityBuild");
+		$Citybuild->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Citybuild");
 
-		$sur = Item::get(103, 1, 1);
-		$sur->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Oneline");
+		$MiniGames = Item::get(103, 1, 1);
+		$MiniGames->setCustomName(TextFormat::RESET . TextFormat::GREEN . "MiniGames");
 
 		$inv->setItem(8, $exit);
 		$inv->setItem(0, $Citybuild);
-		$inv->setItem(1, $SkyblocK);
-		$inv->setItem(2, $Oneline);
-		//$inv->setItem(4, $sur);
+		$inv->setItem(2, $CityBuildV2);
+		$inv->setItem(4, $KnockFFA);
+		$inv->setItem(6, $MiniGames);
 
 	}
 
@@ -292,7 +292,7 @@ class LobbyItems extends PluginBase implements Listener
 		if (!$player->isWhitelisted($name)) {
 			$msg =
 				TextFormat::BOLD . TextFormat::GRAY . "+++-----------+++-----------+++\n" .
-				TextFormat::RESET . TextFormat::GOLD . "TeronixPE" . TextFormat::GRAY . "|" . TextFormat::RED . " WhiteListed\n" .
+				TextFormat::RESET . TextFormat::RED. "VaronPE" . TextFormat::GRAY . "|" . TextFormat::RED . " WhiteListed\n" .
 				TextFormat::GOLD . "Wir sind in WartungsArbeiten...";
 			$player->close("", $msg);
 		}
@@ -396,14 +396,14 @@ class LobbyItems extends PluginBase implements Listener
 		$inv = $player->getInventory();
 		$inv->clearAll();
 
-		$item1 = Item::get(368, 0, 1);
+		$item1 = Item::get(345, 0, 1);
 		$item1->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Teleporter");
 
-		$item2 = Item::get(130, 0, 1);
+		$item2 = Item::get(54, 0, 1);
 		$item2->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Cosmetics");
 
 		$item3 = Item::get(264, 0, 1);
-		$item3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Rang Info");
+		$item3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Friends");
 
 		if (!in_array($name, $this->showall) && !in_array($name, $this->showvips) && !in_array($name, $this->shownone)) {
 
@@ -419,7 +419,7 @@ class LobbyItems extends PluginBase implements Listener
 		} elseif (in_array($name, $this->showvips)) {
 
 			$item4 = Item::get(351, 5, 1);
-			$item4->setCustomName(TextFormat::RESET . TextFormat::DARK_PURPLE . "Nur VIP's sichtbar");
+			$item4->setCustomName(TextFormat::RESET . TextFormat::DARK_PURPLE . "Nur VIPs sichtbar");
 
 		} elseif (in_array($name, $this->shownone)) {
 
@@ -566,7 +566,7 @@ class LobbyItems extends PluginBase implements Listener
 
 		}
 
-		if ($in == TextFormat::RESET . TextFormat::DARK_PURPLE . "Nur VIP's sichtbar") {
+		if ($in == TextFormat::RESET . TextFormat::DARK_PURPLE . "Nur VIPs sichtbar") {
 			$item = Item::get(351, 8, 1);
 			$item->setCustomName(TextFormat::RESET . TextFormat::GRAY . "Keine Spieler sichtbar");
 
@@ -588,14 +588,14 @@ class LobbyItems extends PluginBase implements Listener
 
 		}
 		//run
-		if ($in == TextFormat::RESET . TextFormat::GOLD . "SkyBlock") {
-			$event->getPlayer()->transfer("54.37.166.50", "33");
+		if ($in == TextFormat::RESET . TextFormat::GOLD . "KnockFFA") {
+			$event->getPlayer()->transfer("", "");
 		}
-		if ($in == TextFormat::RESET . TextFormat::GOLD . "Oneline") {
-			$event->getPlayer()->transfer("54.37.166.50", "90");
+		if ($in == TextFormat::RESET . TextFormat::GOLD . "MiniGames") {
+			$event->getPlayer()->transfer("VaronPE.tk", "5557");
 		}
-		if ($in == TextFormat::RESET . TextFormat::GOLD . "CityBuild") {
-			$event->getPlayer()->transfer("UnexMC.net","7355");
+		if ($in == TextFormat::RESET . TextFormat::GOLD . "Citybuild") {
+			$event->getPlayer()->transfer("VaronPE.tk","3557");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Rang Info") {
