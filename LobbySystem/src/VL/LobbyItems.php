@@ -222,7 +222,7 @@ class LobbyItems extends PluginBase implements Listener
 		$Citybuild = Item::get(138, 1, 1);
 		$Citybuild->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Citybuild");
 
-		$MiniGames = Item::get(103, 1, 1);
+		$MiniGames = Item::get(276, 1, 1);
 		$MiniGames->setCustomName(TextFormat::RESET . TextFormat::YELLOW . "MiniGames");
 
 		$inv->setItem(8, $exit);
@@ -270,7 +270,7 @@ class LobbyItems extends PluginBase implements Listener
 		$item2->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Normal");
 
 		$item3 = Item::get(131, 0, 1);
-		$item3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Gross");
+		$item3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Gro�");
 
 		$exit = Item::get(351, 1, 1);
 		$exit->setCustomName(TextFormat::RESET . TextFormat::RED . "Exit");
@@ -400,7 +400,7 @@ class LobbyItems extends PluginBase implements Listener
 		$item1->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Teleporter");
 
 		$item2 = Item::get(54, 0, 1);
-		$item2->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Cosmetics");
+		$item2->setCustomName(TextFormat::RESET . TextFormat::BLUE . "Gadgets");
 
 		$item3 = Item::get(446, 0, 1);
 		$item3->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Clans");
@@ -598,15 +598,15 @@ class LobbyItems extends PluginBase implements Listener
 			$event->getPlayer()->transfer("VaronPE.tk","3557");
 		}
 
-		if ($in == TextFormat::RESET . TextFormat::GOLD . "Friends") {
+		if ($in == TextFormat::RESET . TextFormat::GREEN . "Clans") {
 
 			//$this->getRangMenu($player);
-			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bald");
+			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bitte benutze /clan help");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Nick") {
 			var_dump("geht");
-			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bitte benutze /clan help");
+			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bitte benutze /nick on");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Fly") {
@@ -693,14 +693,14 @@ class LobbyItems extends PluginBase implements Listener
 			
 		}
 		
-		if($in == TextFormat::RESET . TextFormat::GOLD . "Cosmetics") {
+		if($in == TextFormat::RESET . TextFormat::BLUE . "Gadgets") {
 			if($player->hasPermission("lobby.cosmetics")) {
 				
 				$this->getCosmetics($player);
 				
 			} else {
 				
-				$player->sendMessage($this->prefix . TextFormat::RED . "Du kannst keine Cosmetics benutzen!");
+				$player->sendMessage($this->prefix . TextFormat::RED . "Du kannst keine Gadgets benutzen!");
 				
 			}
 			
@@ -710,7 +710,7 @@ class LobbyItems extends PluginBase implements Listener
 		$cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 		
 		//Groeße
-		if($in == TextFormat::RESET . TextFormat::GOLD . "Groeßen") {
+		if($in == TextFormat::RESET . TextFormat::GOLD . "Groessen") {
 			
 			$this->getBigItems($player);
 			
