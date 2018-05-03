@@ -405,7 +405,7 @@ class LobbyItems extends PluginBase implements Listener
 		$item3 = Item::get(446, 0, 1);
 		$item3->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Clans");
 		
-		$item5 = Item::get(54, 0, 1,);
+		$item5 = Item::get(54, 0, 1);
 		$item5->setCustomName(TextFormat::RESET . TextFormat::GREEN . "ChestOpening");
 
 		if (!in_array($name, $this->showall) && !in_array($name, $this->showvips) && !in_array($name, $this->shownone)) {
