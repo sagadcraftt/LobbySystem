@@ -225,8 +225,8 @@ class LobbyItems extends PluginBase implements Listener
 		$MLGRush = Item::get(24, 1, 1);
 		$MLGRush->setCustomName(TextFormat::RESET . TextFormat::YELLOW . "MLGRush");
 		
-		$PushWars = Item::get(355, 1, 1);
-		$PushWars->setCustomName(TextFormat::RESET . TextFormat::BLUE . "PushWars");
+		$BedWars = Item::get(355, 1, 1);
+		$BedWars->setCustomName(TextFormat::RESET . TextFormat::BLUE . "BedWars");
 		
 		$StickFight = Item::get(369, 1, 1);
 		$StickFight->setCustomName(TextFormat::RESET . TextFormat::GOLD . "StickFight");
@@ -442,7 +442,7 @@ class LobbyItems extends PluginBase implements Listener
 		} elseif (in_array($name, $this->showvips)) {
 
 			$item4 = Item::get(351, 5, 1);
-			$item4->setCustomName(TextFormat::RESET . TextFormat::DARK_PURPLE . "Nur VIP's sichtbar");
+			$item4->setCustomName(TextFormat::RESET . TextFormat::DARK_PURPLE . "Nur VIPs sichtbar");
 
 		} elseif (in_array($name, $this->shownone)) {
 
@@ -590,7 +590,7 @@ class LobbyItems extends PluginBase implements Listener
 
 		}
 
-		if ($in == TextFormat::RESET . TextFormat::DARK_PURPLE . "Nur VIP's sichtbar") {
+		if ($in == TextFormat::RESET . TextFormat::DARK_PURPLE . "Nur VIPs sichtbar") {
 			$item = Item::get(351, 8, 1);
 			$item->setCustomName(TextFormat::RESET . TextFormat::GRAY . "Keine Spieler sichtbar");
 
@@ -627,12 +627,15 @@ class LobbyItems extends PluginBase implements Listener
 	    if ($in == TextFormat::RESET . TextFormat::GOLD . "StickFight") {
 		     $event->getPlayer()->transfer("play-rushGames.tk","");
 		}
-		if ($in == TextFormat::RESET . TextFormat::BLUE . "PushWars") {
+		if ($in == TextFormat::RESET . TextFormat::BLUE . "BedWars") {
 			$event->getPlayer()->transfer("play-rushGames.tk","976");
 	    }
 	    if ($in == TextFormat::RESET . TextFormat::RED . "FFA") {
 		     $event->getPlayer()->transfer("play-rushGames.tk","77,");
-		
+		}
+		if ($in == TextFormat::RESET . TextFormat::GREEN . "SkyBlock") {
+			 $event->getPlayer()->transfer("play-rushGames.tk","976");
+		}
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Rang Info") {
 
 			//$this->getRangMenu($player);
@@ -745,7 +748,7 @@ class LobbyItems extends PluginBase implements Listener
 		$cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 		
 		//Groeße
-		if($in == TextFormat::RESET . TextFormat::GOLD . "Groeßen") {
+		if($in == TextFormat::RESET . TextFormat::GOLD . "Groessen") {
 			
 			$this->getBigItems($player);
 			
@@ -767,7 +770,7 @@ class LobbyItems extends PluginBase implements Listener
 		
 		if($in == TextFormat::RESET . TextFormat::GOLD . "Gross") {
 			
-			$player->sendMessage($this->prefix . TextFormat::GREEN . "Du bist jetzt " . TextFormat::GOLD . "Groß");
+			$player->sendMessage($this->prefix . TextFormat::GREEN . "Du bist jetzt " . TextFormat::GOLD . "Gross");
 			$player->setDataProperty(Entity::DATA_SCALE, Entity::DATA_TYPE_FLOAT, 1.5);
 			
 		}
