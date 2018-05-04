@@ -601,13 +601,13 @@ class LobbyItems extends PluginBase implements Listener
 		}
 		//run
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "KnockFFA") {
-			$event->getPlayer()->transfer("VaronPE.tk", "8780");
+			$event->getPlayer()->transfer("VaronPE.fun", "8780");
 		}
 		if ($in == TextFormat::RESET . TextFormat::YELLOW . "MiniGames") {
-			$event->getPlayer()->transfer("VaronPE.tk", "5557");
+			$event->getPlayer()->transfer("VaronPE.fun", "5557");
 		}
 		if ($in == TextFormat::RESET . TextFormat::GREEN . "Citybuild") {
-			$event->getPlayer()->transfer("VaronPE.tk","3557");
+			$event->getPlayer()->transfer("VaronPE.fun","3557");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GREEN . "Clans") {
