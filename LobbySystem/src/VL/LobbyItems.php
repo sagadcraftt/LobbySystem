@@ -50,7 +50,7 @@ use pocketmine\event\player\PlayerCommandPreprocessEvent;
 class LobbyItems extends PluginBase implements Listener
 {
 
-	public $prefix = TextFormat::RED . "RushGames" . TextFormat::GRAY . " | " . TextFormat::WHITE;
+	public $prefix = TextFormat::BLUE . "VaronPE" . TextFormat::GRAY . " | " . TextFormat::WHITE;
 	public $heart = array("Hearth111");
 	public $jump = array("Jump222");
 	public $speed = array("Speed333");
@@ -81,12 +81,12 @@ class LobbyItems extends PluginBase implements Listener
 	public function onEnable(): void{
 
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getLogger()->info(TextFormat::GREEN . "Plugin has enabled by PrinxIsLeqit.");
+		$this->getLogger()->info(TextFormat::GREEN . "Plugin has enabled.");
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new ItemsLoad($this), 10);
 
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new TypeType($this), 20);
 
-		$this->getServer()->getNetwork()->setName(TextFormat::BOLD . TextFormat::RED . "RushGames");
+		$this->getServer()->getNetwork()->setName(TextFormat::BOLD . TextFormat::GREEN . "VaronPE");
 
 		$this->getServer()->getDefaultLevel()->setTime(1000);
 		$this->getServer()->getDefaultLevel()->stopTime();
@@ -213,39 +213,27 @@ class LobbyItems extends PluginBase implements Listener
 		$exit = Item::get(351, 1, 1);
 		$exit->setCustomName(TextFormat::RESET . TextFormat::RED . "Exit");
 
-		$GunGame = Item::get(271, 1, 1);
-		$GunGame->setCustomName(TextFormat::RESET . TextFormat::RED . "GunGame");
-		
+		$CityBuildV2 = Item::get(122, 1, 1);
+		$CityBuildV2->setCustomName(TextFormat::RESET . TextFormat::BLUE . "CityBuildV2");
+
 		$KnockFFA = Item::get(280, 1, 1);
-		$KnockFFA->setCustomName(TextFormat::RESET . TextFormat::YELLOW . "KnockFFA");
+		$KnockFFA->setCustomName(TextFormat::RESET . TextFormat::GOLD . "KnockFFA");
 
 		$Citybuild = Item::get(138, 1, 1);
-		$Citybuild->setCustomName(TextFormat::RESET . TextFormat::YELLOW . "Citybuild");
+		$Citybuild->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Citybuild");
 
-		$MLGRush = Item::get(24, 1, 1);
-		$MLGRush->setCustomName(TextFormat::RESET . TextFormat::YELLOW . "MLGRush");
+		$MiniGames = Item::get(276, 1, 1);
+		$MiniGames->setCustomName(TextFormat::RESET . TextFormat::YELLOW . "MiniGames");
 		
-		$BedWars = Item::get(355, 1, 1);
-		$BedWars->setCustomName(TextFormat::RESET . TextFormat::BLUE . "BedWars");
-		
-		$StickFight = Item::get(369, 1, 1);
-		$StickFight->setCustomName(TextFormat::RESET . TextFormat::GOLD . "StickFight");
-		
-		$FFA = Item::get(267, 1, 1);
-		$FFA->setCustomName(TextFormat::RESET . TextFormat::RED . "FFA");
-		
-		$SkyBlock = Item::get(2, 1, 1);
-		$SkyBlock->setCustomName(TextFormat::RESET . TextFormat::GREEN . "SkyBlock");
+		$LobbyGames = Item::get(369, 1, 1);
+		$LobbyGames->setCustomName(TextFormat::RESET . TextFormat::RED . "LobbyGames");
 
 		$inv->setItem(8, $exit);
 		$inv->setItem(0, $Citybuild);
-		$inv->setItem(1, $GunGame);
+		$inv->setItem(2, $CityBuildV2);
 		$inv->setItem(4, $KnockFFA);
-		$inv->setItem(6, $MLGRush);
-		$inv->setItem(7, $BedWars);
-		$inv->setItem(2, $StickFight);
-		$inv->setItem(5, $FFA);
-		$inv->setItem(3, $SkyBlock);
+		$inv->setItem(6, $MiniGames);
+		$inv->setItem(7, $LobbyGames);
 
 	}
 
@@ -308,7 +296,7 @@ class LobbyItems extends PluginBase implements Listener
 		if (!$player->isWhitelisted($name)) {
 			$msg =
 				TextFormat::BOLD . TextFormat::GRAY . "+++-----------+++-----------+++\n" .
-				TextFormat::RESET . TextFormat::RED . "RushGames" . TextFormat::GRAY . "|" . TextFormat::RED . " WhiteListed\n" .
+				TextFormat::RESET . TextFormat::RED. "VaronPE" . TextFormat::GRAY . "|" . TextFormat::RED . " WhiteListed\n" .
 				TextFormat::GOLD . "Wir sind in WartungsArbeiten...";
 			$player->close("", $msg);
 		}
@@ -369,9 +357,6 @@ class LobbyItems extends PluginBase implements Listener
 
 		$item5 = Item::get(421, 0, 1);
 		$item5->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Nick");
-		
-		$item6 = Item::get(57, 0, 1);
-		$item6->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Pets");
 
 		$exit = Item::get(351, 1, 1);
 		$exit->setCustomName(TextFormat::RESET . TextFormat::RED . "Exit");
@@ -381,7 +366,6 @@ class LobbyItems extends PluginBase implements Listener
 		$inv->setItem(2, $item3);
 		$inv->setItem(3, $item4);
 		$inv->setItem(4, $item5);
-		$inv->setItem(5, $item6);
 		$inv->setItem(8, $exit);
 
 	}
@@ -419,14 +403,14 @@ class LobbyItems extends PluginBase implements Listener
 		$item1 = Item::get(345, 0, 1);
 		$item1->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Teleporter");
 
-		$item2 = Item::get(54, 0, 1);
-		$item2->setCustomName(TextFormat::RESET . TextFormat::BLUE . "Cosmetics");
+		$item2 = Item::get(130, 0, 1);
+		$item2->setCustomName(TextFormat::RESET . TextFormat::BLUE . "Gadgets");
 
-		$item3 = Item::get(264, 0, 1);
-		$item3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Rang Info");
+		$item3 = Item::get(446, 0, 1);
+		$item3->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Clans");
 		
-		$item5 = Item::get(446, 0, 1);
-		$item5->setCustomName(TextFormat::RESET . TextFormat::BLACK . "Clans");
+		$item5 = Item::get(54, 0, 1);
+		$item5->setCustomName(TextFormat::RESET . TextFormat::GREEN . "ChestOpening");
 
 		if (!in_array($name, $this->showall) && !in_array($name, $this->showvips) && !in_array($name, $this->shownone)) {
 
@@ -451,10 +435,10 @@ class LobbyItems extends PluginBase implements Listener
 
 		}
 		$inv->setItem(0, $item2);
-		$inv->setItem(1, $item1);
-		$inv->setItem(8, $item3);
-		$inv->setItem(7, $item4);
-		$inv->setItem(4, $item5);
+		$inv->setItem(2, $item1);
+		$inv->setItem(4, $item3);
+		$inv->setItem(6, $item4);
+		$inv->setItem(8, $item5);
 
 	}
 
@@ -612,39 +596,25 @@ class LobbyItems extends PluginBase implements Listener
 
 		}
 		//run
-		if ($in == TextFormat::RESET . TextFormat::YELLOW . "MLGRush") {
-			$event->getPlayer()->transfer("play-rushGames.tk", "557");
+		if ($in == TextFormat::RESET . TextFormat::GOLD . "KnockFFA") {
+			$event->getPlayer()->transfer("VaronPE.tk", "8780");
 		}
-		if ($in == TextFormat::RESET . TextFormat::YELLOW . "KnockFFA") {
-			$event->getPlayer()->transfer("play-rushGames.tk", "499");
+		if ($in == TextFormat::RESET . TextFormat::YELLOW . "MiniGames") {
+			$event->getPlayer()->transfer("VaronPE.tk", "5557");
 		}
-		if ($in == TextFormat::RESET . TextFormat::YELLOW . "Citybuild") {
-			$event->getPlayer()->transfer("play-rushGames.tk","589");
+		if ($in == TextFormat::RESET . TextFormat::GREEN . "Citybuild") {
+			$event->getPlayer()->transfer("VaronPE.tk","3557");
 		}
-		if ($in == TextFormat::RESET . TextFormat::RED . "GunGame") {
-			$event->getPlayer()->transfer("play-rushGames.tk","100");
-	    }
-	    if ($in == TextFormat::RESET . TextFormat::GOLD . "StickFight") {
-		     $event->getPlayer()->transfer("play-rushGames.tk","");
-		}
-		if ($in == TextFormat::RESET . TextFormat::BLUE . "BedWars") {
-			$event->getPlayer()->transfer("play-rushGames.tk","976");
-	    }
-	    if ($in == TextFormat::RESET . TextFormat::RED . "FFA") {
-		     $event->getPlayer()->transfer("play-rushGames.tk","77,");
-		}
-		if ($in == TextFormat::RESET . TextFormat::GREEN . "SkyBlock") {
-			 $event->getPlayer()->transfer("play-rushGames.tk","976");
-		}
-		if ($in == TextFormat::RESET . TextFormat::GOLD . "Rang Info") {
+
+		if ($in == TextFormat::RESET . TextFormat::GREEN . "Clans") {
 
 			//$this->getRangMenu($player);
-			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bald!");
+			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bitte benutze /clan help");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Nick") {
 			var_dump("geht");
-			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bitte benutze /nick on!");
+			$event->getPlayer()->sendMessage($this->prefix . TextFormat::RED . "Bitte benutze /nick on");
 		}
 
 		if ($in == TextFormat::RESET . TextFormat::GOLD . "Fly") {
@@ -677,7 +647,7 @@ class LobbyItems extends PluginBase implements Listener
             $this->getServer()->dispatchCommand($event->getPlayer(), "transferserver");
 			}
 		
-		if ($in == TextFormat::GOLD . "Syblock Lobby") {
+		if ($in == TextFormat::GOLD . "Skyblock Lobby") {
 			if($event->getPlayer()->hasPermission("lobby.premium")) {
 				
 				$this->getServer()->dispatchCommand($event->getPlayer(), "transferserver");
@@ -701,7 +671,7 @@ class LobbyItems extends PluginBase implements Listener
 			$player->sendMessage(TextFormat::GRAY . "===] " . TextFormat::GOLD . "Diamond" . TextFormat::GRAY . " [===");
 			$player->sendMessage(TextFormat::GOLD . "Preis" . TextFormat::GRAY . ": " . TextFormat::GREEN . "10 Euro");
 			$player->sendMessage(TextFormat::GOLD . "Features" . TextFormat::GRAY . ": ");
-			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::BLUE . "Cosmetics");
+			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::GOLD . "Cosmetics");
 			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::GOLD . "Farbiger Nametag");
 			
 		}
@@ -711,7 +681,7 @@ class LobbyItems extends PluginBase implements Listener
 			$player->sendMessage(TextFormat::GRAY . "===] " . TextFormat::GOLD . "Hero" . TextFormat::GRAY . " [===");
 			$player->sendMessage(TextFormat::GOLD . "Preis" . TextFormat::GRAY . ": " . TextFormat::GREEN . "20 Euro");
 			$player->sendMessage(TextFormat::GOLD . "Features" . TextFormat::GRAY . ": ");
-			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::BLUE . "Cosmetics");
+			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::GOLD . "Cosmetics");
 			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::GOLD . "Doppelte Coins in MiniGames");
 			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::GOLD . "OP Items in CityBuild" . TextFormat::GRAY . " | " . TextFormat::RED . "BALD");
 			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::GOLD . "Farbiger Nametag");
@@ -723,7 +693,7 @@ class LobbyItems extends PluginBase implements Listener
 			$player->sendMessage(TextFormat::GRAY . "===] " . TextFormat::GOLD . "Titan" . TextFormat::GRAY . " [===");
 			$player->sendMessage(TextFormat::GOLD . "Preis" . TextFormat::GRAY . ": " . TextFormat::GREEN . "15 Euro");
 			$player->sendMessage(TextFormat::GOLD . "Features" . TextFormat::GRAY . ": ");
-			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::BLUE . "Cosmetics");
+			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::GOLD . "Cosmetics");
 			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::GOLD . "Doppelte Coins in MiniGames");
 			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::GOLD . "OP Items in CityBuild" . TextFormat::GRAY . " | " . TextFormat::RED . "BALD");
 			$player->sendMessage(TextFormat::GRAY . "- " . TextFormat::GOLD . "5× Level 3 Kiste" . TextFormat::GRAY . " | " . TextFormat::RED . "BALD");
@@ -731,14 +701,14 @@ class LobbyItems extends PluginBase implements Listener
 			
 		}
 		
-		if($in == TextFormat::RESET . TextFormat::BLUE . "Cosmetics") {
+		if($in == TextFormat::RESET . TextFormat::BLUE . "Gadgets") {
 			if($player->hasPermission("lobby.cosmetics")) {
 				
 				$this->getCosmetics($player);
 				
 			} else {
 				
-				$player->sendMessage($this->prefix . TextFormat::RED . "Du kannst keine Cosmetics benutzen!");
+				$player->sendMessage($this->prefix . TextFormat::RED . "Du kannst keine Gadgets benutzen!");
 				
 			}
 			
@@ -1138,7 +1108,7 @@ class LobbyItems extends PluginBase implements Listener
 		$bot3->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Speed Boots");
 		
 		$bot4 = Item::get(313, 0, 1);
-		$bot4->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Explosion");
+		$bot4->setCustomName(TextFormat::RESET . TextFormat::GOLD . "Explosions Boots");
 		
 		$exit = Item::get(351, 1, 1);
 		$exit->setCustomName(TextFormat::RESET . TextFormat::RED . "Exit");
@@ -1201,7 +1171,7 @@ class LobbyItems extends PluginBase implements Listener
 			if(in_array($name, $this->jump)) {
 				
 				unset($this->jump[array_search($name, $this->jump)]);
-				$player->sendMessage($this->prefix . TextFormat::RED . "Du hast jetzt keine " . TextFormat::GOLD . "Spring" . TextFormat::RED . " Stiefel mehr an.");
+				$player->sendMessage($this->prefix . TextFormat::RED . "Du hast jetzt keine " . TextFormat::GOLD . "Jump" . TextFormat::RED . " Stiefel mehr an.");
 				
 				$player->removeAllEffects();
 				$inv->setBoots(Item::get(0, 0, 1));
@@ -1224,7 +1194,7 @@ class LobbyItems extends PluginBase implements Listener
 				$player->addEffect($effect);
 				
 				$this->jump[] = $name;
-				$player->sendMessage($this->prefix . TextFormat::GREEN . "Du hast jetzt " . TextFormat::GOLD . "Spring" . TextFormat::GREEN . " Stiefel an.");
+				$player->sendMessage($this->prefix . TextFormat::GREEN . "Du hast jetzt " . TextFormat::GOLD . "Jump" . TextFormat::GREEN . " Stiefel an.");
 				
 				if(in_array($name, $this->speed)) {
 					unset($this->speed[array_search($name, $this->speed)]);
@@ -1244,7 +1214,7 @@ class LobbyItems extends PluginBase implements Listener
 			if(in_array($name, $this->speed)) {
 				
 				unset($this->speed[array_search($name, $this->speed)]);
-				$player->sendMessage($this->prefix . TextFormat::RED . "Du hast jetzt keine " . TextFormat::GOLD . "Schnelligkeits" . TextFormat::RED . " Stiefel mehr an.");
+				$player->sendMessage($this->prefix . TextFormat::RED . "Du hast jetzt keine " . TextFormat::GOLD . "Speed" . TextFormat::RED . " Stiefel mehr an.");
 				$inv->setBoots(Item::get(0, 0, 1));
 				$player->removeAllEffects();
 				
@@ -1259,7 +1229,7 @@ class LobbyItems extends PluginBase implements Listener
 			} else {
 				$inv->setBoots(Item::get(309, 0, 1));
 				$this->speed[] = $name;
-				$player->sendMessage($this->prefix . TextFormat::GREEN . "Du hast jetzt " . TextFormat::GOLD . "Schnelligkeits" . TextFormat::GREEN . " Stiefel an.");
+				$player->sendMessage($this->prefix . TextFormat::GREEN . "Du hast jetzt " . TextFormat::GOLD . "Speed" . TextFormat::GREEN . " Stiefel an.");
 				$player->removeAllEffects();
 				$effect = Effect::getEffect(1);
 				$effect->setDuration(999);
@@ -1281,7 +1251,7 @@ class LobbyItems extends PluginBase implements Listener
 			
 		}
 		
-		if($in == TextFormat::RESET . TextFormat::GOLD . "Explosion") {
+		if($in == TextFormat::RESET . TextFormat::GOLD . "Explosions Boots") {
 			
 			if(in_array($name, $this->water)) {
 				$inv->setBoots(Item::get(0, 0, 1));
