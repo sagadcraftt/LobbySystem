@@ -222,7 +222,7 @@ class LobbyItems extends PluginBase implements Listener
 		$Citybuild = Item::get(138, 1, 1);
 		$Citybuild->setCustomName(TextFormat::RESET . TextFormat::GREEN . "Citybuild");
 
-		$MiniGames = Item::get(276, 1, 1);
+		$MiniGames = Item::get(322, 1, 1);
 		$MiniGames->setCustomName(TextFormat::RESET . TextFormat::YELLOW . "MiniGames");
 		
 		$LobbyGames = Item::get(369, 1, 1);
@@ -436,9 +436,9 @@ class LobbyItems extends PluginBase implements Listener
 		}
 		$inv->setItem(0, $item2);
 		$inv->setItem(4, $item1);
-		$inv->setItem(8, $item3);
+		$inv->setItem(1, $item3);
 		$inv->setItem(7, $item4);
-		$inv->setItem(1, $item5);
+		$inv->setItem(8, $item5);
 
 	}
 
