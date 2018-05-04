@@ -213,7 +213,7 @@ class LobbyItems extends PluginBase implements Listener
 		$exit = Item::get(351, 1, 1);
 		$exit->setCustomName(TextFormat::RESET . TextFormat::RED . "Exit");
 
-		$CityBuildV2 = Item::get(122, 1, 1);
+		$CityBuildV2 = Item::get(278, 1, 1);
 		$CityBuildV2->setCustomName(TextFormat::RESET . TextFormat::BLUE . "CityBuildV2");
 
 		$KnockFFA = Item::get(280, 1, 1);
@@ -435,10 +435,10 @@ class LobbyItems extends PluginBase implements Listener
 
 		}
 		$inv->setItem(0, $item2);
-		$inv->setItem(1, $item1);
-		$inv->setItem(4, $item3);
+		$inv->setItem(4, $item1);
+		$inv->setItem(8, $item3);
 		$inv->setItem(7, $item4);
-		$inv->setItem(8, $item5);
+		$inv->setItem(1, $item5);
 
 	}
 
