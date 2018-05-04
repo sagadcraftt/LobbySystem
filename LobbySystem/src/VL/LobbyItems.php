@@ -226,14 +226,18 @@ class LobbyItems extends PluginBase implements Listener
 		$MiniGames->setCustomName(TextFormat::RESET . TextFormat::YELLOW . "MiniGames");
 		
 		$LobbyGames = Item::get(369, 1, 1);
-		$LobbyGames->setCustomName(TextFormat::RESET . TextFormat::RED . "LobbyGames");
+		$LobbyGames->setCustomName(TextFormat::RESET . TextFormat::BLUE . "LobbyGames");
+		
+		$Bald = Item::get(7, 1, 1);
+		$Bald->setCustomName(TextFormat::RESET . TextFormat::RED . "Bald");
 
 		$inv->setItem(8, $exit);
 		$inv->setItem(0, $Citybuild);
-		$inv->setItem(2, $CityBuildV2);
-		$inv->setItem(4, $KnockFFA);
-		$inv->setItem(6, $MiniGames);
-		$inv->setItem(7, $LobbyGames);
+		$inv->setItem(1, $CityBuildV2);
+		$inv->setItem(3, $KnockFFA);
+		$inv->setItem(4, $MiniGames);
+		$inv->setItem(5, $LobbyGames);
+		$inv->setItem(6, $Bald);
 
 	}
 
