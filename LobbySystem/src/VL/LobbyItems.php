@@ -86,7 +86,7 @@ class LobbyItems extends PluginBase implements Listener
 
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new TypeType($this), 20);
 
-		$this->getServer()->getNetwork()->setName(TextFormat::BOLD . TextFormat::GREEN . "VaronPE");
+		$this->getServer()->getNetwork()->setName(TextFormat::BOLD . TextFormat::GREEN . "VaronPE-CityBuild Release");
 
 		$this->getServer()->getDefaultLevel()->setTime(1000);
 		$this->getServer()->getDefaultLevel()->stopTime();
