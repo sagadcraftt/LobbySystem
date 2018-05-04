@@ -1190,7 +1190,6 @@ class LobbyItems extends PluginBase implements Listener
 				$effect->setDuration(999);
 				$effect->setAmplifier(1);
 				$effect->setVisible(false);
-				
 				$player->addEffect($effect);
 				
 				$this->jump[] = $name;
@@ -1235,7 +1234,6 @@ class LobbyItems extends PluginBase implements Listener
 				$effect->setDuration(999);
 				$effect->setAmplifier(1);
 				$effect->setVisible(false);
-				
 				$player->addEffect($effect);
 				
 				
@@ -1277,7 +1275,6 @@ class LobbyItems extends PluginBase implements Listener
 				$effect->setDuration(999);
 				$effect->setAmplifier(1);
 				$effect->setVisible(false);
-				
 				$player->addEffect($effect);
 				
 				if(in_array($name, $this->speed)) {
