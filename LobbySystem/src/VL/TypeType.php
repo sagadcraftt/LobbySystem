@@ -2,6 +2,7 @@
 namespace VL;
 use VL\LobbyItems;
 use VL\ItemsLoad;
+use VL\FlameParticle;
 
 use pocketmine\scheduler\PluginTask;
 use pocketmine\plugin\Plugin;
